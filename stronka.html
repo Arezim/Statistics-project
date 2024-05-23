@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reading Time</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #text {
+            font-size: 24px;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            width: 60%;
+            text-align: justify;
+            display: none; /* Hide text initially */
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #stopButton {
+            display: none; /* Hide stop button initially */
+        }
+        #result {
+            font-size: 18px;
+            color: #888; /* Less visible */
+            margin-top: 20px;
+            text-align: center;
+        }
+        .big-button {
+            font-size: 24px;
+            padding: 20px 40px;
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+        }
+        .big-button:hover {
+            background-color: #45a049;
+        }
+        .time {
+            font-size: 16px;
+            color: #888;
+            margin-top: 10px;
+        }
+        .lobster-regular {
+            font-family: "Lobster", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+    <button id="startButton" onclick="startReading()">Start Reading</button>
+    <div id="text">
+        <p>There was once a woman who was very, very cheerful, though she had little to make her so; for she was old, and poor, and lonely. She lived in a little bit of a cottage and earned a scant living by running errands for her neighbours, getting a bite here, a sup there, as reward for her services. So she made shift to get on, and always looked as spry and cheery as if she had not a want in the world.</p>
+        <p>Now one summer evening, as she was trotting, full of smiles as ever, along the high road to her hovel, what should she see but a big black pot lying in the ditch!</p>
+        <p>"Goodness me!" she cried, "that would be just the very thing for me if I only had something to put in it! But I haven't! Now who could have left it in the ditch?"</p>
+        <p>And she looked about her expecting the owner would not be far off; but she could see nobody.</p>
+        <p>"Maybe there is a hole in it," she went on, "and that's why it has been cast away. But it would do fine to put a flower in for my window; so I'll just take it home with me."</p>
+        <p>And with that she lifted the lid and looked inside. "Mercy me!" she cried, fair amazed. "If it isn't full of gold pieces. Here's luck!"</p>
+        <p>And so it was, brimful of great gold coins. Well, at first she simply stood stock-still, wondering if she was standing on her head or her heels. Then she began saying:</p>
+        <p>"Lawks! But I do feel rich. I feel awful rich!"</p>
+        <p>After she had said this many times, she began to wonder how she was to get her treasure home. It was too heavy for her to carry, and she could see no better way than to tie the end of her shawl to it and drag it behind her like a go-cart.</p>
+        <p>"It will soon be dark," she said to herself as she trotted along. "So much the better! The neighbours will not see what I'm bringing home, and I shall have all the night to myself, and be able to think what I'll do! Mayhap I'll buy a grand house and just sit by the fire with a cup o' tea and do no work at all like a queen. Or maybe I'll bury it at the garden foot and just keep a bit in the old china teapot on the chimney-piece. Or maybe—Goody! Goody! I feel that grand I don't know myself."</p>
+        <p>By this time she was a bit tired of dragging such a heavy weight, and, stopping to rest a while, turned to look at her treasure.</p>
+        <p>And lo! it wasn't a pot of gold at all! It was nothing but a lump of silver.</p>
+        <p>She stared at it, and rubbed her eyes, and stared at it again.</p>
+        <p>"Well! I never!" she said at last. "And me thinking it was a pot of gold! I must have been dreaming. But this is luck! Silver is far less trouble—easier to mind, and not so easy stolen. Them gold pieces would have been the death o' me, and with this great lump of silver—"</p>
+        <p>So she went off again planning what she would do, and feeling as rich as rich, until becoming a bit tired again she stopped to rest and gave a look round to see if her treasure was safe; and she saw nothing but a great lump of iron!</p>
+        <p>"Well! I never!" says she again. "And I mistaking it for silver! I must have been dreaming. But this is luck! It's real convenient. I can get penny pieces for old iron, and penny pieces are a deal handier for me than your gold and silver. Why! I should never have slept a wink for fear of being robbed. But a penny piece comes in useful, and I shall sell that iron for a lot and be real rich—rolling rich."</p>
+        <p>So on she trotted full of plans as to how she would spend her penny pieces, till once more she stopped to rest and looked round to see her treasure was safe. And this time she saw nothing but a big stone.</p>
+        <p>"Well! I never!" she cried, full of smiles. "And to think I mistook it for iron. I must have been dreaming. But here's luck indeed, and me wanting a stone terrible bad to stick open the gate. Eh my! but it's a change for the better! It's a fine thing to have good luck."</p>
+        <p>So, all in a hurry to see how the stone would keep the gate open, she trotted off down the hill till she came to her own cottage. She unlatched the gate and then turned to unfasten her shawl from the stone which lay on the path behind her. Aye! It was a stone sure enough. There was plenty light to see it lying there, douce and peaceable as a stone should.</p>
+        <p>So she bent over it to unfasten the shawl end, when—"Oh my!" All of a sudden it gave a jump, a squeal, and in one moment was as big as a haystack. Then it let down four great lanky legs and threw out two long ears, nourished a great long tail and romped off, kicking and squealing and whinnying and laughing like a naughty, mischievous boy!</p>
+        <p>The old woman stared after it till it was fairly out of sight, then she burst out laughing too.</p>
+        <p>"Well!" she chuckled, "I am in luck! Quite the luckiest body hereabouts. Fancy my seeing the Bogey-Beast all to myself; and making myself so free with it too! My goodness! I do feel that uplifted—that GRAND!"—</p>
+        <p>So she went into her cottage and spent the evening chuckling over her good luck.</p>
+    </div>
+    <button id="stopButton" onclick="stopReading()">Stop Reading</button>
+    <div id="result"></div>
+
+    <script>
+        let startTime;
+        let endTime;
+        const textDiv = document.getElementById('text');
+        const startButton = document.getElementById('startButton');
+        const stopButton = document.getElementById('stopButton');
+
+        function startReading() {
+            // Choose a random font
+            textDiv.style.fontFamily = Math.random() > 0.5 ? 'Verdana' : 'Lobster, sans-serif';
+            textDiv.style.display = 'block';
+            startTime = new Date();
+            document.getElementById('result').textContent = '';
+            startButton.style.display = 'none';
+            stopButton.style.display = 'inline';
+        }
+
+        function stopReading() {
+            if (!endTime) {
+                endTime = new Date();
+                const readingTime = (endTime - startTime) / 1000;
+                document.getElementById('result').innerHTML = `
+                    <div>Please click the button below to complete the form.</div>
+                    <a href="https://forms.google.com" class="big-button">Go to the form</a>
+                    <div class="time">Reading time: ${readingTime} seconds</div>
+                `;
+                textDiv.style.display = 'none';
+
+                // Hide the buttons
+                stopButton.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
