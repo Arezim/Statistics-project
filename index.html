@@ -116,9 +116,20 @@
         const startButton = document.getElementById('startButton');
         const stopButton = document.getElementById('stopButton');
 
+        // Function to get or set the font choice
+        function getOrSetFontChoice() {
+            let fontChoice = localStorage.getItem('fontChoice');
+            if (fontChoice === null) {
+                fontChoice = Math.random() > 0.5 ? 'Verdana' : 'Lobster, sans-serif';
+                localStorage.setItem('fontChoice', fontChoice);
+            }
+            return fontChoice;
+        }
+
         function startReading() {
-            // Choose a random font
-            textDiv.style.fontFamily = Math.random() > 0.5 ? 'Verdana' : 'Lobster, sans-serif';
+            // Get the font choice from localStorage or set it
+            const fontChoice = getOrSetFontChoice();
+            textDiv.style.fontFamily = fontChoice;
             textDiv.style.display = 'block';
             startTime = new Date();
             document.getElementById('result').textContent = '';
