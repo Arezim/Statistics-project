@@ -141,9 +141,11 @@
             if (!endTime) {
                 endTime = new Date();
                 const readingTime = (endTime - startTime) / 1000;
+                const fontChoice = localStorage.getItem('fontChoice');
+                const formLink = fontChoice === 'Verdana' ? 'https://forms.google.com/form-verdana' : 'https://forms.google.com/form-lobster';
                 document.getElementById('result').innerHTML = `
                     <div>Please click the button below to complete the form.</div>
-                    <a href="https://forms.google.com" class="big-button">Go to the form</a>
+                    <a href="${formLink}" class="big-button">Go to the form</a>
                     <div class="time">Reading time: ${readingTime} seconds</div>
                 `;
                 textDiv.style.display = 'none';
