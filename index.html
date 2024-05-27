@@ -361,6 +361,7 @@
 
         function checkLastReadingTime() {
             const lastReadingTime = localStorage.getItem('lastReadingTime');
+            const textDiv = document.getElementById('text');
             if (lastReadingTime) {
                 const fontChoice = localStorage.getItem('fontChoice');
                 const formLink = fontChoice === 'Verdana' ? 'https://forms.google.com/form-verdana' : 'https://forms.google.com/form-lobster';
@@ -370,6 +371,8 @@
             <div class="time">Reading time: ${lastReadingTime} seconds</div>
         `;
                 startButton.style.display = 'none';
+                // Delete the text
+                textDiv.parentNode.removeChild(textDiv);
             } else {
                 startButton.style.display = 'block';
             }
@@ -377,6 +380,7 @@
 
         // Check last reading time on page load
         checkLastReadingTime();
+
 
 
     </script>
