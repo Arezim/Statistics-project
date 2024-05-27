@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Reading Time</title>
@@ -14,20 +15,30 @@
             font-family: Arial, sans-serif;
             text-align: center;
         }
+
         #text {
             font-size: 24px;
             margin: 20px;
             padding: 20px;
             border: 1px solid #ddd;
-            width: 60%;
+            width: 70%;
             text-align: justify;
-            display: none; /* Hide text initially */
-            overflow-y: auto; /* Ensure text can scroll if it overflows */
+            display: none;
+            /* Hide text initially */
+            overflow-y: auto;
+            /* Ensure text can scroll if it overflows */
         }
+        .dialogue {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 6px solid #7cb342;
+        }
+
         button {
-            font-size: 18px;
-            padding: 10px 20px;
-            margin: 10px;
+            font-size: 26px;
+            padding: 30px 60px;
+            margin: 50px;
             cursor: pointer;
             border: none;
             background-color: #4CAF50;
@@ -35,18 +46,25 @@
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
+
         button:hover {
             background-color: #45a049;
         }
+
         #stopButton {
-            display: none; /* Hide stop button initially */
+            display: none;
+            margin-bottom: 100px;
+            /* Hide stop button initially */
         }
+
         #result {
             font-size: 18px;
-            color: #888; /* Less visible */
+            color: #888;
+            /* Less visible */
             margin-top: 20px;
             text-align: center;
         }
+
         .big-button {
             font-size: 24px;
             padding: 20px 40px;
@@ -61,46 +79,236 @@
             text-align: center;
             text-decoration: none;
         }
+
         .big-button:hover {
             background-color: #45a049;
         }
+
         .time {
             font-size: 16px;
             color: #888;
             margin-top: 10px;
         }
+
         .lobster-regular {
             font-family: "Lobster", sans-serif;
             font-weight: 400;
             font-style: normal;
+        }
+
+        footer {
+            width: 100vw;
+            background-color: #f1f1f1;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            position: fixed;
+            bottom: 0;
+            left: 0;
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <button id="startButton" onclick="startReading()">Start Reading</button>
     <div id="text">
-        <h1>New Study Reveals Organic Matter on Mars</h1>
-        <p>A new study published in the journal Science shows definitive evidence of organic matter on the surface of Mars. The data was collected by NASA's nuclear-powered rover Curiosity. It confirms earlier findings that the Red Planet once contained carbon-based compounds. These compounds – also called organic molecules – are essential ingredients for life as scientists understand it.</p>
-        
-        <p>The organic molecules were found in Mars's Gale Crater, a large area that may have been a watery lake over three billion years ago. The rover encountered traces of the molecule in rocks extracted from the area. The rocks also contain sulfur, which scientists speculate helped preserve the organics even when the rocks were exposed to the harsh radiation on the surface of the planet.</p>
-        
-        <p>Scientists are quick to state that the presence of these organic molecules is not sufficient evidence for ancient life on Mars, as the molecules could have been formed by non-living processes. But it's still one of the most astonishing discoveries, which could lead to future revelations. Especially when one considers the other startling find that Curiosity uncovered around five years ago.</p>
-        
-        <p>The rover analyses the air around it periodically, and in 2014 it found the air contained another of the most basic organic molecules and a key ingredient of natural gas: methane. One of the characteristics of methane is that it only survives a few hundred years. This means that something, somewhere on Mars, is replenishing the supply. According to NASA, Mars emits thousands of tons of methane at a time. The level of methane rises and falls at seasonal intervals in the year, almost as if the planet is breathing it.</p>
-        
-        <p>NASA suspects the methane comes from deep under the surface of the planet. The variations in temperature on the surface of Mars cause the molecule to flow upwards at higher or lower levels. For example, in the Martian winter the gas could get trapped in underground icy crystals. These crystals, called clathrates, melt in the summer and release the gas. However, the source of the methane is still a complete mystery.</p>
-        
-        <p>The world of astrobiology considers both of these studies as historical milestones. According to this information, Mars is not a dead planet. On the contrary, it is quite active and may be changing and becoming more habitable.</p>
-        
-        <p>Of course, this means further research is necessary. Scientists say they need to send new equipment to Mars, equipment that can measure the air and soil with more precision. There are already missions underway. The European Space Agency's ExoMars ship lands in 2020 and will be able to drill into the ground on Mars to analyse what it finds. Additionally, NASA is sending another Mars Rover in the same year to collect samples of Martian soil and return them to Earth.</p>
-        
-        <p>The possibility of life on Mars has fascinated humans for generations. It has been the subject of endless science-fiction novels and films. Are we alone in the universe or have there been other life forms within our Solar System? If the current missions to the Red Planet continue, it looks as if we may discover the answer very soon.</p>
+        <h3>Sergeant Frank Spike is not a successful police officer. But he has 'a nose for crime'. Will his last case change his luck?</h3>
+        <p>Sergeant Frank Spike sat behind his desk and stared out of the window. Outside, a steady stream of traffic
+            passed by, each car moving slowly in the cold, grey rain.</p>
+
+        <p>Frank looked down at the grey hairs on his arms, and his round stomach, which pushed against the desk. This
+            was his final month before he retired from the police, and, for Frank, retirement couldn't come soon enough.
+        </p>
+
+        <p>Frank frowned as he considered the terrible retirement package he had been given. It was barely enough money
+            to take a short holiday on the cold and rainy east coast of England where he lived. There was no way he
+            could afford the round-the-world, luxury cruise he had always dreamed of.</p>
+
+        <p>Just as Frank was sighing heavily, Inspector Spencer came up to his desk, with his perfect white teeth and
+            enthusiastic smile. Three years earlier, Spencer had been promoted. Now he had the position of inspector at
+            the young age of forty. Frank, in comparison, had worked for the police for forty years and been passed over
+            for promotion three times. It was true he had neither the looks nor charm of Spencer – sorry, Inspector
+            Spencer – but the younger man didn't have Frank's 'nose for crime'. That nose meant Frank could get inside
+            the mind of the criminal and solve the trickiest of cases. As a result, the younger man often asked for
+            Frank's help. In fact, it was pretty much the only time Spencer spoke to him.</p>
+
+        <div class="dialogue">
+            <p>'Hey, Frank, do you mind if I ask your advice about something?'</p>
+            <p>Unsurprised, Frank nodded.</p>
+            <p>'Have you heard of the Babbingtons?'</p>
+        </div>
+
+        <p>Everyone had heard of the Babbingtons. Ronald Babbington was the millionaire owner of Babbington Oil, and his
+            wife Tabitha was a model. Together they enjoyed nothing more than showing off how rich they were. They often
+            appeared in magazines like Hello!, with their gorgeous house and collection of sports cars. Most recently,
+            they had invited the press to take photographs of the enormous diamond Ronald had bought for his bride.
+            Under the protection of a sophisticated alarm system, the diamond sat in a large gold and glass case. The
+            case stood at the end of a long, red carpet.</p>
+
+        <p>Spencer paused for dramatic effect, then explained.</p>
+
+        <div class="dialogue">
+            <p>'We've had some secret information about a plan to steal the Babbington diamond!'</p>
+        </div>
+
+        <p>Frank raised his eyebrows in an attempt to look suitably impressed.</p>
+
+        <div class="dialogue">
+            <p>'Peggy, the owner of the Dog and Duck pub, heard a couple of local criminals talking about it. She's
+                asked that we keep her identity secret of course. But our officers have made some discreet inquiries
+                that seem to confirm what Peggy says.'</p>
+        </div>
+
+        <p>Frank nodded again and waited for the inevitable question.</p>
+
+        <div class="dialogue">
+            <p>'So?' Spencer asked. 'What do you think is the best thing to do? After all, it's only a rumour. We've got
+                nothing concrete to arrest them on.'</p>
+        </div>
+
+        <p>Frank looked thoughtfully out of the window. He remembered his retirement money. He didn't want to be alone
+            in his retirement, but the money wouldn't even be enough to buy a cat to keep him company.</p>
+
+        <p>The sound of a car horn brought him back to the case. He put his fingers together under his chin to look as
+            if he was thinking deeply. Which he was, but not quite in the direction Inspector Spencer expected.</p>
+
+        <div class="dialogue">
+            <p>'Listen, do this the clever way,' said Frank, leaning towards the younger officer. 'What you need to do
+                is let them commit the crime. If you catch them red-handed, you've got all the evidence you need, no
+                problem.'</p>
+            <p>'But, Frank,' said Spencer, 'we'd need the approval of the Babbington family. And there are laws about
+                tricking criminals like that, you know!'</p>
+            <p>'That's why you let them commit the crime. Then, apparently by chance, stop them for speeding as they
+                escape the crime scene. You search the car to find the diamond, and you've caught them red-handed! Plus,
+                the owner of the pub is protected, and you have all the evidence you need.'</p>
+            <p>'Hmmmm. OK.' Spencer was uncomfortable with the methods Frank was suggesting. But he couldn't deny the
+                plan would work.</p>
+            <p>Frank continued, 'Of course, you need to ensure the arresting officer is someone you know is reliable.'
+            </p>
+            <p>Spencer understood immediately.</p>
+            <p>'Are you sure you want to do it, Frank? It could be dangerous.'</p>
+            <p>'I'll make sure I'm with a couple of tough young officers, but, yes, of course I want to do it.'</p>
+            <p>'Why?' asked Spencer. 'You're just about to retire! Don't you want to take it easy?'</p>
+            <p>'That's exactly why I want to do it,' Frank replied. 'My last case will be my final chance for glory!'
+            </p>
+        </div>
+
+        <p>*****</p>
+
+        <p>A few days later, Frank went into the Dog and Duck pub after work.</p>
+
+        <div class="dialogue">
+            <p>'Did you get it?' he asked Peggy as she handed him his drink.</p>
+            <p>'Yes. I am now the proud owner of a perfect replica Babbington diamond,' she said. 'I told the glassmaker
+                I was a huge fan of the Babbingtons and that my mean boyfriend wouldn't buy me a diamond of my own.'</p>
+            <p>'You need a new boyfriend,' said Frank. 'If I were your boyfriend, I'd buy you a diamond ring and take
+                you on a long luxury cruise if I had the chance.'</p>
+            <p>'Oh, really?' she said and smiled.</p>
+        </div>
+
+        <p>*****</p>
+
+        <p>Frank was sitting in the back seat of the police car, which was hidden on the road through the woods to the
+            Babbington mansion. In the front seats were two young officers who were strong and reliable.</p>
+
+        <p>At 23.30, a message had come in on the police radio. The burglars had met outside the Dog and Duck pub. At
+            23.37, the young man started the car and left the pub. In the passenger seat was a tall, athletic woman.</p>
+
+        <p>At midnight, the pair passed the hidden police car on their way to the mansion. At 00.13, the woman threw
+            heavy ropes over one of the mansion's garden walls. A second hidden police team watched her climb over,
+            while the man waited in the car.</p>
+
+        <p>At 00.20, the woman reappeared at the top of the wall with an excited smile on her face. She climbed quickly
+            down the rope before pulling it down with her and running back to the car. Smiling in triumph, the man
+            waited for her to jump in and then sped off in the car.</p>
+
+        <p>*****</p>
+
+        <p>At 00.23, the thieves passed Frank's car. The young police officer in the driver's seat immediately switched
+            on the flashing blue lights and followed them.</p>
+
+        <p>Inside the car, the thieves panicked.</p>
+
+        <div class="dialogue">
+            <p>'What are they doing here?' the man shouted. 'I thought you said you turned off the alarms?'</p>
+            <p>'Relax, I did,' she replied. 'They couldn't have got here this fast anyway. They're just traffic police.
+                Just keep calm and act normally and we can walk away from this with the diamond.'</p>
+        </div>
+
+        <p>The man slowed their car to a stop and pressed the button that lowered his window.</p>
+
+        <div class="dialogue">
+            <p>'Is there a problem, officer?' he asked, his face shiny with nervous sweat.</p>
+            <p>'You were speeding. We'll need to give you a ticket. Can you both get out of the car, please?'</p>
+        </div>
+
+        <p>The man still looked nervous. While one officer wrote out the speeding ticket and the other stood by ready to
+            get involved if things turned nasty, Frank began thoroughly searching the car.</p>
+
+        <div class="dialogue">
+            <p>'Hey, what's he searching the car for?' the woman said. But she knew the game was over.</p>
+        </div>
+
+        <p>Frank breathed heavily as he knelt down and started lifting up the rubber mats underneath the seats. His hand
+            felt something smooth, hard and cold under the front passenger car seat. The Babbington diamond! He took the
+            diamond and put it in his jacket pocket. At the same time, with his other hand, he took a very similar
+            object out of his trouser pocket. He held it up.</p>
+
+        <div class="dialogue">
+            <p>'OK, you two!' he said. 'You are under arrest for robbery!'</p>
+        </div>
+
+        <p>*****</p>
+
+        <p>While the young police officers arrested and handcuffed the criminals, Frank held the evidence up for
+            everyone to admire. It shone rainbow colours as it caught the light from the moon.</p>
+
+        <div class="dialogue">
+            <p>'I've never seen a real diamond up close,' said one.</p>
+            <p>'Imagine someone giving you that as a present!' said the other.</p>
+            <p>'Just imagine,' Frank agreed. He carefully put it into an evidence bag. Half an hour later, back at the
+                station, he handed it over to Spencer. Spencer took it from him carefully, as if it was a newborn baby.
+            </p>
+        </div>
+
+        <p>*****</p>
+
+        <p>Five weeks later, Frank was sitting in his new luxury massage chair and drinking a glass of the finest
+            champagne. His expensive new cat rubbed her tail around his legs, and he reached down to stroke her.</p>
+
+        <p>With a satisfied sigh, he leaned over and picked up the local newspaper. The two burglars had got six years
+            in prison. The accompanying photo was of the Babbingtons happily showing off the diamond inside its new,
+            extra-thick glass case. Frank looked closely at the photo of the diamond.</p>
+
+        <p>Only a jewellery expert would spot anything strange about the Babbington diamond. And even then, only if they
+            saw the stone up close.</p>
+
+        <p>Frank put the newspaper down and picked up one of the travel magazines on his beautiful new coffee table.</p>
+
+        <div class="dialogue">
+            <p>'Peggy?' he said. 'Would you like to go to the Bahamas or the Maldives?'</p>
+            <p>Peggy put down her own champagne glass, a small diamond ring on her finger shining in the light. 'Why not
+                both?' she smiled.</p>
+            <p>'I did promise you a long cruise,' he said.</p>
+            <p>'You did!' she replied. 'I'm so glad I called you first when I heard them talking about that robbery.'
+            </p>
+            <p>'Me too, Peggy,' he said. 'Me too.'</p>
+        </div>
+
+        <p>Retirement was turning out to be a wonderful thing after all.</p>
+
+        <p><em>Story written by Clive Lane and adapted by Nicola Prentis </br> Credit: British Council</em></p>
     </div>
     <button id="stopButton" onclick="stopReading()">Stop Reading</button>
     <div id="result"></div>
+
+    <footer>
+        <p><em>Story written by Clive Lane and adapted by Nicola Prentis. Credit: British Council</em></p>
+    </footer>
 
     <script>
         let startTime;
@@ -149,4 +357,5 @@
         }
     </script>
 </body>
+
 </html>
