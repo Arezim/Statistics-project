@@ -37,8 +37,8 @@
         }
 
         button {
-            font-size: 26px;
-            padding: 30px 60px;
+            font-size: 18px;
+            padding: 10px 20px;
             margin: 50px;
             cursor: pointer;
             border: none;
@@ -115,6 +115,14 @@
 </head>
 
 <body>
+    <div id="infoMessage"
+        style="display: none; font-size: 18px; color: #888; margin-top: 20px; text-align: justify; width: 70%;">
+        <h3>Please follow these instructions:</h3>
+        <p>Get ready to read. Click the Start button to begin and start reading. The button will start the timer. Read the text at a normal, comfortable pace. This will help us accurately measure your current reading level. Do not rush or read too slowly.</p>
+        <p>Click the Stop button as soon as you have finished. This will stop the timer and display your reading speed.</p>
+        <p>After that, you will be redirected to a Google Forms document and asked several questions about the text. You must answer these questions to find out if you have understood the text.</p>
+        <h3>Note: you will be able to read the text only once</h3>
+    </div>
     <button id="startButton" onclick="startReading()">Start Reading</button>
     <div id="text">
         <h3>Sergeant Frank Spike is not a successful police officer. But he has 'a nose for crime'. Will his last case
@@ -329,17 +337,6 @@
             return fontChoice;
         }
 
-        function startReading() {
-            // Get the font choice from localStorage or set it
-            const fontChoice = getOrSetFontChoice();
-            textDiv.style.fontFamily = fontChoice;
-            textDiv.style.display = 'block';
-            startTime = new Date();
-            document.getElementById('result').textContent = '';
-            startButton.style.display = 'none';
-            stopButton.style.display = 'inline';
-        }
-
         function stopReading() {
             if (!endTime) {
                 endTime = new Date();
@@ -362,6 +359,7 @@
         function checkLastReadingTime() {
             const lastReadingTime = localStorage.getItem('lastReadingTime');
             const textDiv = document.getElementById('text');
+            const infoMessage = document.getElementById('infoMessage');
             if (lastReadingTime) {
                 const fontChoice = localStorage.getItem('fontChoice');
                 const formLink = fontChoice === 'Verdana' ? 'https://forms.gle/7atW1CjJiFijZWAZ9' : 'https://forms.gle/aQv3KtD4rxcHSoM79';
@@ -371,16 +369,28 @@
             <div class="time">Reading time: ${lastReadingTime} seconds</div>
         `;
                 startButton.style.display = 'none';
-                // Delete the text
+                // Usuwamy element z tekstem
                 textDiv.parentNode.removeChild(textDiv);
             } else {
                 startButton.style.display = 'block';
+                infoMessage.style.display = 'block';
             }
+        }
+
+        function startReading() {
+            // Get the font choice from localStorage or set it
+            const fontChoice = getOrSetFontChoice();
+            textDiv.style.fontFamily = fontChoice;
+            textDiv.style.display = 'block';
+            startTime = new Date();
+            document.getElementById('result').textContent = '';
+            startButton.style.display = 'none';
+            stopButton.style.display = 'inline';
+            document.getElementById('infoMessage').style.display = 'none';
         }
 
         // Check last reading time on page load
         checkLastReadingTime();
-
 
 
     </script>
