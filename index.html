@@ -28,6 +28,7 @@
             overflow-y: auto;
             /* Ensure text can scroll if it overflows */
         }
+
         .dialogue {
             background-color: #f9f9f9;
             padding: 10px;
@@ -116,7 +117,8 @@
 <body>
     <button id="startButton" onclick="startReading()">Start Reading</button>
     <div id="text">
-        <h3>Sergeant Frank Spike is not a successful police officer. But he has 'a nose for crime'. Will his last case change his luck?</h3>
+        <h3>Sergeant Frank Spike is not a successful police officer. But he has 'a nose for crime'. Will his last case
+            change his luck?</h3>
         <p>Sergeant Frank Spike sat behind his desk and stared out of the window. Outside, a steady stream of traffic
             passed by, each car moving slowly in the cold, grey rain.</p>
 
@@ -342,19 +344,41 @@
             if (!endTime) {
                 endTime = new Date();
                 const readingTime = (endTime - startTime) / 1000;
+                localStorage.setItem('lastReadingTime', readingTime);
                 const fontChoice = localStorage.getItem('fontChoice');
                 const formLink = fontChoice === 'Verdana' ? 'https://forms.google.com/form-verdana' : 'https://forms.google.com/form-lobster';
                 document.getElementById('result').innerHTML = `
-                    <div>Please click the button below to complete the form.</div>
-                    <a href="${formLink}" class="big-button">Go to the form</a>
-                    <div class="time">Reading time: ${readingTime} seconds</div>
-                `;
+            <div>Please click the button below to complete the form.</div>
+            <a href="${formLink}" class="big-button">Go to the form</a>
+            <div class="time">Reading time: ${readingTime} seconds</div>
+        `;
                 textDiv.style.display = 'none';
 
                 // Hide the buttons
                 stopButton.style.display = 'none';
             }
         }
+
+        function checkLastReadingTime() {
+            const lastReadingTime = localStorage.getItem('lastReadingTime');
+            if (lastReadingTime) {
+                const fontChoice = localStorage.getItem('fontChoice');
+                const formLink = fontChoice === 'Verdana' ? 'https://forms.google.com/form-verdana' : 'https://forms.google.com/form-lobster';
+                document.getElementById('result').innerHTML = `
+            <div>Please click the button below to complete the form.</div>
+            <a href="${formLink}" class="big-button">Go to the form</a>
+            <div class="time">Reading time: ${lastReadingTime} seconds</div>
+        `;
+                startButton.style.display = 'none';
+            } else {
+                startButton.style.display = 'block';
+            }
+        }
+
+        // Check last reading time on page load
+        checkLastReadingTime();
+
+
     </script>
 </body>
 
